@@ -20,15 +20,13 @@ for(let i = 0; i<buttonValues.length; i++){
     const button = document.createElement("button");
     button.innerText = buttonValues[i];
     mainButton.appendChild(button);
-    console.log("Getting called again");
     let value = buttonValues[i];
     console.dir(value);
     if(value == "0"){
         button.style.width = "150px";
         button.style.gridColumn = "span 2";
     }
-        let numberIndex = 0;
-
+    let numberIndex = 0;
     let operatorIndex = 0;
     button.addEventListener("click", ()=>{
         display.value = value;
