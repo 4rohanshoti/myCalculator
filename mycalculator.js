@@ -11,7 +11,6 @@ const mainButton = document.getElementById("buttons");
 let A = null;
 let B = null;
 let numbers = [];
-let operator = null;
 console.log(numbers[0] = "hello");
 let operators = [];
 
