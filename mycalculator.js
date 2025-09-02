@@ -11,9 +11,9 @@ const mainButton = document.getElementById("buttons");
 let A = null;
 let B = null;
 let numbers = [];
+let operator = null;
 console.log(numbers[0] = "hello");
 let operators = [];
-
 
 for(let i = 0; i<buttonValues.length; i++){
     const display = document.getElementById("display");
