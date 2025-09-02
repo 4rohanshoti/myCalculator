@@ -25,7 +25,7 @@ for(let i = 0; i<buttonValues.length; i++){
         button.style.width = "150px";
         button.style.gridColumn = "span 2";
     }
-    let numberIndex = 0;
+    let numberIndex = 0; //Changes
     let operatorIndex = 0;
     button.addEventListener("click", ()=>{
         display.value = value;
