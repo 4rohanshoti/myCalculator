@@ -8,11 +8,14 @@ const buttonValues = [
 const rightSymbols = ["÷", "×", "-", "+", "="];
 const topSymbols = ["AC", "+/-", "%"];
 const mainButton = document.getElementById("buttons");
-let A = null;
-let B = null;
+let A = 0;
+let B = 0;
 let numbers = [];
 console.log(numbers[0] = "hello");
 let operators = [];
+let operator = 0;
+let numberIndex = 0; 
+let operatorIndex = 0;
 
 for(let i = 0; i<buttonValues.length; i++){
     const display = document.getElementById("display");
@@ -25,10 +28,9 @@ for(let i = 0; i<buttonValues.length; i++){
         button.style.width = "150px";
         button.style.gridColumn = "span 2";
     }
-    let numberIndex = 0; //Changes
-    let operatorIndex = 0;
+
     button.addEventListener("click", ()=>{
-        display.value = value;
+        display.value += value;
         if(rightSymbols.includes(value) || topSymbols.includes(value)){
             console.log("I am not a numbe");
             operators[operatorIndex] = value;
@@ -39,14 +41,49 @@ for(let i = 0; i<buttonValues.length; i++){
             numberIndex++;
             console.log(numberIndex);
         }
-        if(numberIndex == 5){
-            console.log("Index is: " + numberIndex);
-            loopFunc();
+        // if(numberIndex == 5){
+        //     console.log("Index is: " + numberIndex);
+        //     loopFunc();
+        // }
+        // if(operatorIndex == 3){
+        //     loopFunc();
+        // }
+
+
+        if(value === "="){
+            loopFunc(value);
         }
+
     });
 }
 
-const loopFunc = ()=>{
+const loopFunc = (calculationValue)=>{
     console.log("Inside function");
     numbers.forEach(value => console.log(value));
+    operators.forEach(value => console.log(value));
+    
+
+    for(let i = 0; i<operators.length; i++){
+        A = numbers[i];
+        B = numbers[i+1];
+        let sum = 0;
+        operator = operators[i];
+        console.log("First number: " + numbers[i]);
+        console.log("Second number: " + numbers[i+1]);
+
+        if(calculationValue === "="){
+
+            if(operator == "+"){
+                console.log("Hello");
+                sum = A + B; //Fix this sum, it's not adding two numbers. 
+            }
+        }
+        console.log("The calculation is: " + sum);
+    }
+
+    /*for * we will have a * b and then for second operation + (a*b)+b "b will change throughout index increment"
+    So we will access different numbers every new index. So We can think of it like this: A will hold the calculation and B Will hold next value
+    we will store every calculation inside of A and computer next number with different operation for different number which will be store in B
+    */
+
 }
